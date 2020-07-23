@@ -34,6 +34,14 @@ def turn(board)
   puts "Please enter 1-9:"
   input = gets.strip
   index = input_to_index(input)
-  move(board, index)
-  display_board(board)
+  if !position_taken?
+    move(board, index)
+    display_board(board)
+  elsif position_taken?
+    puts "Please enter 1-9:"
+    input = gets.strip
+    index = input_to_index(input)
+  end
+
+
 end
